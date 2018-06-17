@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>lotto</title>
+<style type="text/css">
+	html * {margin:0;padding:0;}
+	a {display:inline-block;margin:10px;text-decoration:none;}
+	ul li {float:left;width:50px;height:50px;margin:0 10px;line-height:50px;text-align:center;list-style:none;border-radius:100%;font-weight:bold;color:#fff;}
+	ul li:nth-child(1) {background:#febd3f;color:#000;}
+	ul li:nth-child(2) {background:#febd40;color:#000;}
+	ul li:nth-child(3) {background:#4592e9;}
+	ul li:nth-child(4) {background:#fe5742;}
+	ul li:nth-child(5) {background:#727373;}
+	ul li:nth-child(6) {background:#51b40e;}
+	ul li:nth-child(7) {background:none;}
+	ul li:nth-child(8) {background:#4390e8;}
+</style>
+</head>
+<body>
+
+<div class="lottoWrap">
+	<a href="#" class="btn">추첨번호 고르기</a>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+//모듈패턴 (오로지 하나를 정의할때)
+
+var module = (function(){
+	//private 변수, 함수는 외부에서 접근불가
+	var defaults = {
+		list : $(".lottoWrap li"),
+		currentIdx : $(".lottoWrap li").index(),
+		btn : $(".btn"),
+		numIdx : 0
+	}
+	var setEvent = function(){
+		defaults.btn.bind("click", function(e){
+			var num = Math.floor(Math.random() * 44 +1);
+			//console.log(num);
+			if(defaults.numIdx == defaults.currentIdx){
+				defaults.list.each(function(i){
+					 defaults.list.eq(defaults.currentIdx).text(num);
+				})
+			}
+			defaults.currentIdx++;
+			defaults.numIdx++;
+			//console.log(defaults.currentIdx, defaults.numIdx);
+
+			e.preventDefault();
+		})	
+	}
+	//public 변수, 함수만 접근가능
+	return {
+		init : function(){
+			setEvent();
+			console.log("public 변수 :" + defaults.list.length );
+		}
+	}
+})();
+	
+$(document).ready(function(){
+	module.init();
+})
+
+</script>	
+</body>
+</html>

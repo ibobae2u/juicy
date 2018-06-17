@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>lotto</title>
+<style type="text/css">
+	html * {margin:0;padding:0;}
+	a {display:inline-block;margin:10px;text-decoration:none;}
+	ul li {float:left;width:50px;height:50px;margin:0 10px;line-height:50px;text-align:center;list-style:none;border-radius:100%;font-weight:bold;color:#fff;}
+	ul li:nth-child(1) {background:#febd3f;color:#000;}
+	ul li:nth-child(2) {background:#febd40;color:#000;}
+	ul li:nth-child(3) {background:#4592e9;}
+	ul li:nth-child(4) {background:#fe5742;}
+	ul li:nth-child(5) {background:#727373;}
+	ul li:nth-child(6) {background:#51b40e;}
+	ul li:nth-child(7) {background:none;}
+	ul li:nth-child(8) {background:#4390e8;}
+</style>
+</head>
+<body>
+
+<div class="lottoWrap">
+	<a href="#" class="btn">추첨번호 고르기</a>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+//프로토타입 패턴 (다수를 정의할때: 프로토타입 속성으로 언제든지 변수,함수 추가 가능)
+
+var Prototype = function(){ //생성자 선언(변수명은 관례적으로 대문자로 선언!)
+		this.list = $(".lottoWrap li");
+		this.currentIdx = $(".lottoWrap li").index();
+		this.btn = $(".btn");
+		this.numIdx = 0;
+}	
+
+Prototype.prototype.setEvent = function(){
+	var that = this;
+	this.btn.bind("click", function(e){
+		var num = Math.floor(Math.random() * 44 +1);
+		//console.log(num);
+		if(that.numIdx == that.currentIdx){
+			that.list.each(function(){
+				that.list.eq(that.currentIdx).text(num);
+			})
+		}
+		that.currentIdx++;
+		that.numIdx++;
+		//console.log(that.currentIdx, that.numIdx);
+		e.preventDefault();
+	})	
+}
+	
+$(document).ready(function(){
+	var oop = new Prototype();
+	oop.setEvent();
+})
+
+</script>	
+</body>
+</html>

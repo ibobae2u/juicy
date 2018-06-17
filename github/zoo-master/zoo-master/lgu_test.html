@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>LG U+</title>
+<meta charset="euc-kr">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--
+<meta name="referrer" content="always">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<meta property="og:title" content="LG 유플러스">
+<meta property="og:url" content="http://www.uplus.co.kr">
+<meta property="og:image" content="">
+<meta property="og:description" content="LG 유플러스">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LG 유플러스">
+<meta name="twitter:url" content="http://www.uplus.co.kr">
+<meta name="twitter:image" content="">
+<meta name="twitter:description" content="LG 유플러스">
+-->
+<link rel="shortcut icon" href="http://www.uplus.co.kr/common/ui/images/common/mobile/favicon_16_lgu.ico">
+<link rel="apple-touch-icon-precomposed" href="http://www.uplus.co.kr/common/ui/images/common/mobile/icon_512_lgu.png">
+<meta http-equiv="Cache-Control" content="no-cache; no-store; no-save" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<title>LG유플러스</title>
+<!-- JavaScript Framework -->
+<script type="text/javascript" src="http://www.uplus.co.kr/common/renewal/ui/js/cm/jquery.js"></script> 
+<!--
+<script type="text/javascript" src="http://www.uplus.co.kr/common/renewal/ui/js/cm/lib.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/renewal/ui/js/cm/ui.gnb.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/renewal/ui/js/cm/ui.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/renewal/ui/js/cm/ui.dev.js"></script>
+-->
+<!-- 17/12/13[유플러스홈페이지 개선]js -->
+<!--
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/jquery.validate.min.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/jquery.validate.ext.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/jquery.message.min.js"></script>
+-->
+<script type="text/javascript" src="http://www.uplus.co.kr/common/renewal/ui/js/cm/jquery-migrate-1.2.1.js"></script>  
+<!-- JavaScript Framework End -->
+<link rel="stylesheet" type="text/css" href="http://www.uplus.co.kr/common/renewal/ui/css/cm/pc/base.css">
+<link rel="stylesheet" type="text/css" href="http://www.uplus.co.kr/common/renewal/ui/css/co/pc/ck.css">
+<script type="text/javascript">
+function isMobileCheck(){
+	return false;
+}
+</script>
+<script src="http://www.uplus.co.kr/common/renewal/ui/js/co/ui.company.js" type="text/javascript"></script>
+<!-- GNB 로그인  -->
+<!--
+	-->
+<!-- 단말 종류에 따라 CSS 및 JS를 import End -->
+
+<!--[if lte IE 9]>
+    <script src="http://www.uplus.co.kr/common/renewal/ui/js/cm/html5shiv.min.js"></script>
+<![endif]-->
+<!--
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/makePCookie.js" charset="euc-kr"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/jquery.hpi.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/package.js"></script>
+<script type="text/javascript">
+    var HPI_CONTEXT_PATH = '';
+	var HPI_DEVICE_TYPE = 'Desktop';
+	var HPI_BROWSER_TYPE = 'Chrome';
+	var HPI_SSL = 'https://www.uplus.co.kr:443';
+	var HPI_NON_SSL = 'http://www.uplus.co.kr:80';
+	var HPI_SYS_TODAY = '20180608';
+
+	$(document).ready(function() {
+		jQuery.browser = {}; (function () { 
+			jQuery.browser.msie = false; 
+			jQuery.browser.version = 0; 
+			if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) { 
+				jQuery.browser.msie = true; 
+				jQuery.browser.version = RegExp.$1; 
+			} 
+
+		})();
+		
+		$.ajaxSetup ({ 
+			cache: false 
+		});
+
+		$('#HPI_LOADING').ajaxStart(function() { 
+			if(!$('#wrap').is('.intro_main')){
+				$(this).show();	
+			}
+		}).ajaxStop(function() { 
+			$(this).hide(); 
+		}).ajaxError(function(event, XMLHttpRequest, ajaxOptions, thrownError){ 
+			$(this).hide(); 
+			if(XMLHttpRequest != undefined) {
+				if(XMLHttpRequest.status == '403') { 
+					alert(XMLHttpRequest.status + ", " + ajaxOptions.url); 
+				} else if(XMLHttpRequest.status == '404') { 
+					alert(XMLHttpRequest.status + ", " + ajaxOptions.url); 
+				} else if(XMLHttpRequest.status == '500') { 
+					var message = thrownError === undefined? XMLHttpRequest.responseText : thrownError.message; 
+					alert(message); 
+				} else if(XMLHttpRequest.status == '0') { //검색 자동완성 alert가 뜨는 현상 처리
+					var message = thrownError === undefined? XMLHttpRequest.responseText : thrownError.message; 
+					//alert("ajax 중단"); 
+				} else { 
+					var message = thrownError === undefined? XMLHttpRequest.responseText : thrownError.message; 
+					alert(message); 
+				} 
+			}
+		}); 
+	});	
+</script>
+-->
+<!-- 순서 바꾸지 말것 hpi_sys_comm.js의 script에 영향을 미침  -->
+
+<!-- 검색 자동완성용 JS  -->
+<!--
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sea/sear/search.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sea/sear/beta.fix.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sea/sear/jquery.rolling.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/jquery.validate.min.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/jquery.validate.ext.js"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/sys/comm/hpi_sys_comm.js" charset="euc-kr"></script>
+<script type="text/javascript" src="http://www.uplus.co.kr/common/js/css/sinf/hpi_css_sinf_brsc.js"></script> 
+<link href="http://www.uplus.co.kr/common/renewal/ui/css/cm/sliderpro.min.css" rel="stylesheet" type="text/css">
+<script src="http://www.uplus.co.kr/common/renewal/ui/js/cm/sliderpro.min.js" type="text/javascript"></script>
+<link href="http://www.uplus.co.kr/common/renewal/ui/css/cm/swiper.min.css" rel="stylesheet">
+<script src="http://www.uplus.co.kr/common/renewal/ui/js/cm/swiper.js"></script>
+-->
+<!-- 추가 -->
+<script type="text/javascript" src="https://www.hyosungfms.com/fms/javascripts/lib/TweenMax/TweenMax.min.js"></script>
+<script type="text/javascript" src="https://www.hyosungfms.com/fms/javascripts/lib/TweenMax/easing/EasePack.min.js"></script>
+<!-- 추가 -->
+
+<!-- renewal scroll
+<script type="text/javascript" src="http://www.uplus.co.kr/common/renewal/ui/js/sp_re/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.uplus.co.kr/common/renewal/ui/css/sp_re/pc/jquery.mCustomScrollbar.css">
+renewal scroll -->
+
+
+
+
+<script type="text/javascript">
+function isMobileCheck(){
+	return false;
+}
+</script>
+
+
+<!--
+<script type="text/javascript">
+	//금일날짜시간 설정
+	var today=new Date();
+	var hour=today.getHours();
+	var min=today.getMinutes();
+	if(hour < 10) hour = "0" + hour;
+	if(min < 10) min = "0" + min;
+	var HPI_SYS_TODAY2=HPI_SYS_TODAY+hour+min;
+	
+	//로드시 팝업 페이지 노출(신입사원 모집)
+	//if( HPI_SYS_TODAY2 >= 201203260859 && HPI_SYS_TODAY2 <= 201204131859){
+	//	if(HPI_DEVICE_TYPE != "Mobile"){
+	//		if(hpi.sys.comm.mbrm.funcGetCookie("conferCall") != "no" ) {
+	//			var url = "/dev/announce_0326.jsp";
+	//			var title = 'stopAnnounce';
+	//			var status = 'width=360,height=305,top=0,left=0,fullscreen=no,menubar=no,status=no,toolbar=no,titlebar=yes,location=no,scrollbars=no,resizable=no';
+	//			window.open(url, title, status);
+	//		}
+	//	}
+	//}
+	
+	//팝업 쿠키 설정 함수
+	function popCookie(){
+	  	var today = new Date();
+		today.setDate(today.getDate()+1);
+		hpi.sys.comm.mbrm.funcSetCookie('conferCall','no',today);
+	}
+	
+</script>
+-->
+</head>
+<body>
+
+<!-- skip navigation -->
+<div id="skipnavigation" class="hidden-xs">
+	<ul>
+		<li><a href="#container">본문 바로가기</a></li>
+		<li><a href="#header">주 메뉴 바로가기</a></li>
+	</ul>
+</div>
+<!--// skip navigation -->
+<div id="wrap" class="wrap mainCom">
+	<!-- header -->
+
+
+<div class="blind" aria-hidden="true">
+	<iframe id="sendCookie" name="sendCookie" src="/home/sendCookie.hpi" frameborder="0" style="width:0; height:0;" title="빈프레임"></iframe>
+</div>
+
+
+		<header class="headCompany">
+			<div class="innerBox">
+
+				<div class="wrapMenu">
+					<h1 class="titLogo"><a href="/com/main/pkmain/PkMain.hpi"><img src="http://image.uplus.co.kr/images/renewal/images/co/ck/common/img_logo_company_about.png" alt="LG유플러스 로고"></a></h1>
+					
+					<!-- pc화면 -->
+					<div class="menuEtc">
+						<ul class="utilLink">
+							<li><a href="/home/Index.hpi">개인</a></li>
+							<li><a href="/biz/bzma/RetrieveMain.hpi">기업/중소사업자</a></li>
+						</ul>
+						<div class="menuUtil">
+							<ul class="listUtil">
+								<li><a href="/css/note/cint/RetrieveCintNoticeList.hpi">공지사항</a></li>
+								<li><a href="/com/cpif/lgin/lgns/RetrieveComNewsList.hpi">보도자료 </a></li>
+							</ul>
+							<!-- 2016-11-25 언어설정 -->
+							<ul class="listLang hidden-xs">
+								<li><a class="active" title="LG유플러스 국문 메인페이지로 이동">KOR</a></li>
+								<li><a href="/com/main/pemain/PeMain.hpi" title="LG유플러스 영문 메인페이지로 이동">ENG</a></li>
+							</ul>
+							<script type="text/javascript">
+								function _changeLang(){
+									if($("#chgLang").val() == "eng"){
+										document.location.href ="/com/main/pemain/PeMain.hpi";
+									}else{
+										document.location.href ="/com/main/pkmain/PkMain.hpi";
+									}
+								}
+							</script>
+							<div class="listLang visible-xs">
+								<select title="언어선택" name="chgLang" id="chgLang" onchange="_changeLang();">
+									<option value="kor" title="LG유플러스 국문 메인페이지로 이동">KOR</option>
+									<option value="eng" title="LG유플러스 영문 메인페이지로 이동">ENG</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!--// pc화면 -->
+					
+				
+					<!-- Gnb Primary Menu -->
+					
+					<nav class="menuGnb" id="header">
+						<ul>
+						<!--1 start --><li><a href="/cmg/kore/info/pklu/RetrievePkLuCeo.hpi?mid=10329" class="gnbDp1 menu01">LG U+ 소개</a>
+<div class="boxMenuSub subBox01">
+<ul class="menu2dpt">
+<!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuCeo.hpi?mid=10329" class="gnbDp2">CEO메시지</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuPeo.hpi?mid=10330" class="gnbDp2">유플러스人</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuLove.hpi?mid=10331" class="gnbDp2">따뜻한이웃사랑</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuWith.hpi?mid=10332" class="gnbDp2">고객과함께</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuAdStory.hpi?mid=10333" class="gnbDp2">광고속이야기</a>
+<!--3 start --></li>
+<!--2 end --></ul>
+</div></li><!--1 end --><!--1 start --><li><a href="/cmg/kore/rcrt/pksr/RetrivePkSrHr.hpi?mid=10334" class="gnbDp1 menu02">인재채용</a>
+<div class="boxMenuSub subBox02">
+<ul class="menu2dpt">
+<!--2 start --><li>
+<a href="/cmg/kore/rcrt/pksr/RetrivePkSrHr.hpi?mid=10334" class="gnbDp2">인사제도</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/rcrt/pksr/RetrivePkSrCult.hpi?mid=10335" class="gnbDp2">즐거운직장</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/rcrt/pksr/RetrivePkSrApply.hpi?mid=10336" class="gnbDp2">지원하기</a>
+<!--3 start --></li>
+<!--2 end --></ul>
+</div></li><!--1 end --><!--1 start --><li><a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi?mid=12453" class="gnbDp1 menu03">사업소개</a>
+<div class="boxMenuSub subBox03">
+<ul class="menu2dpt">
+<!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi?mid=12453" class="gnbDp2 hasDp3">모바일</a>
+<!--3 start --><ul class="menu3dpt">
+<li><a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi?mid=12453">5G</a></li>
+<li><a href="/cmg/kore/info/pklu/RetrievePkLuMobile.hpi?mid=10337">모바일</a></li>
+<li><a href="/cmg/kore/info/pklu/RetrievePkLuRoam.hpi?mid=10341">해외로밍</a></li>
+</ul>
+<!--3 end --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuAI.hpi?mid=12454" class="gnbDp2 hasDp3">홈미디어</a>
+<!--3 start --><ul class="menu3dpt">
+<li><a href="/cmg/kore/info/pklu/RetrievePkLuAI.hpi?mid=12454">AI</a></li>
+<li><a href="/cmg/kore/info/pklu/RetrievePkLuIot.hpi?mid=10340">IoT</a></li>
+<li><a href="/cmg/kore/info/pklu/RetrievePkLuHome.hpi?mid=10338">홈</a></li>
+</ul>
+<!--3 end --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuBusi01.hpi?mid=10342" class="gnbDp2">기업</a>
+<!--3 start --></li>
+<!--2 end --></ul>
+</div></li><!--1 end --><!--1 start --><li><a href="/cmg/kore/invs/pkir/RetrievePkIrInvest.hpi?mid=10343" class="gnbDp1 menu04">투자정보</a>
+<div class="boxMenuSub subBox04">
+<ul class="menu2dpt">
+<!--2 start --><li>
+<a href="/cmg/kore/invs/pkir/RetrievePkIrInvest.hpi?mid=10343" class="gnbDp2 hasDp3">경영정보</a>
+<!--3 start --><ul class="menu3dpt">
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrInvest.hpi?mid=10362">투자현황</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrSholder.hpi?mid=10363">대주주현황</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrStructure.hpi?mid=10364">기업지배구조</a></li>
+</ul>
+<!--3 end --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/invs/pkir/RetrievePkIrPublic.hpi?mid=10344&amp;mid=10344" class="gnbDp2">공시정보</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/invs/pkir/RetrievePkIrStCurrent.hpi?mid=10345" class="gnbDp2 hasDp3">주가정보</a>
+<!--3 start --><ul class="menu3dpt">
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrStCurrent.hpi?mid=10365">현재주가</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrStHourly.hpi?mid=10366">시간별호가</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrStDaliy.hpi?mid=10367">일자별주가</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrStChart.hpi?mid=10368">차트분석</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrFholding.hpi?mid=10369">외국인지분율</a></li>
+</ul>
+<!--3 end --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/invs/pkir/RetrievePkIrIfs.hpi?mid=10346" class="gnbDp2 hasDp3">재무정보</a>
+<!--3 start --><ul class="menu3dpt">
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrIfs.hpi?mid=10370">주요재무제표</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrBsheet.hpi?mid=10371">재무상태표</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrIstate.hpi?mid=10372">손익계산서</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrAreport.hpi?mid=10373">감사보고서</a></li>
+</ul>
+<!--3 end --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/invs/pkir/RetrievePkIrNewsList.hpi?mid=10347" class="gnbDp2 hasDp3">IR자료실</a>
+<!--3 start --><ul class="menu3dpt">
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrNewsList.hpi?mid=11892">IR소식</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrMonthList.hpi?mid=11893">IR데이터</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrQuaterList.hpi?mid=11894">실적자료</a></li>
+<li><a href="/cmg/kore/invs/pkir/RetrievePkIrPtList.hpi?mid=11895">Presentation</a></li>
+</ul>
+<!--3 end --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/invs/pkir/RetrievePkIrNotice.hpi?mid=10348" class="gnbDp2">전자공고</a>
+<!--3 start --></li>
+<!--2 end --></ul>
+</div></li><!--1 end --><!--1 start --><li><a href="/cmg/kore/info/pklu/RetrievePkLuIntroduce.hpi?mid=10349" class="gnbDp1 menu05">기업정보</a>
+<div class="boxMenuSub subBox05">
+<ul class="menu2dpt">
+<!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuIntroduce.hpi?mid=10349" class="gnbDp2">기업소개</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuHistory07.hpi?mid=10350" class="gnbDp2">연혁</a>
+<!--3 start --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/RetrievePkLuLgway.hpi?mid=10351" class="gnbDp2 hasDp3">경영철학</a>
+<!--3 start --><ul class="menu3dpt">
+<li><a href="/cmg/kore/info/pklu/RetrievePkLuLgway.hpi?mid=10353">LG Way</a></li>
+<li><a href="/cmg/kore/info/pklu/RetrievePkLuIdea.hpi?mid=10354">경영이념</a></li>
+<li><a href="/cmg/kore/info/pklu/RetrievePkLuRmg.hpi?mid=10355">정도경영</a></li>
+</ul>
+<!--3 end --></li>
+<!--2 end --><!--2 start --><li>
+<a href="/cmg/kore/info/pklu/ConManVision.hpi?mid=10352" class="gnbDp2 hasDp3">지속가능경영</a>
+<!--3 start --><ul class="menu3dpt">
+<li><a href="/cmg/kore/info/pklu/ConManVision.hpi?mid=10356">비전및전략</a></li>
+<li><a href="/cmg/kore/info/pklu/ConManValue01.hpi?mid=10357">이해관계자가치</a></li>
+<li><a href="/cmg/kore/info/pklu/ConManShare01.hpi?mid=10358">사회적나눔</a></li>
+<li><a href="/cmg/kore/info/pklu/ConManTech01.hpi?mid=10359">환경경영</a></li>
+<li><a href="/cmg/kore/info/pklu/ConManReport.hpi?mid=10374">지속가능경영보고서</a></li>
+<li><a href="/cmg/kore/info/pklu/CPProgram.hpi?mid=12377">자율준수프로그램</a></li>
+</ul>
+<!--3 end --></li>
+<!--2 end --></ul>
+</div></li><!--1 end -->
+						</ul>
+					</nav>
+					
+					<!--// Gnb Primary Menu -->
+					<!-- Investment info -->
+					<!-- 주가 상승 : increase / 주가 하락 : decrease -->
+					<!--  
+					<div class="blind">실시간 주가정보</div>
+					<dl class="infoInvest decrease">
+						<dt>10,850</dt>
+						<dd>50</dd>
+					</dl>
+					-->
+					<!-- Investment info -->
+					<a href="#menuAll" class="btnMenuAll">메뉴 전체보기</a>
+				</div>
+
+				
+			</div>
+
+			<div class="menuAllBox" id="menuAll">
+				
+				<div class="innerBox">
+					
+					
+					
+						
+<ul class="listMenuAll">
+	<!-- LG U+소개 -->
+	<li>
+		<a href="/cmg/kore/info/pklu/RetrievePkLuCeo.hpi" class="gnbDp1">LG U<sup>+</sup>소개</a>
+		<button type="button" class="btnOpen">열기/닫기</button>
+		<div class="boxMenuSub subBox01">
+			<ul class="menu2dpt">
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuCeo.hpi" class="gnbDp2">CEO메시지</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuPeo.hpi" class="gnbDp2">유플러스人</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuLove.hpi" class="gnbDp2">따뜻한 이웃사랑</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuWith.hpi" class="gnbDp2">고객과 함께</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuAdStory.hpi" class="gnbDp2">광고 속 이야기</a>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<!-- LG U+소개 -->
+	<!-- 인재채용 -->
+	<li>
+		<a href="/cmg/kore/rcrt/pksr/RetrivePkSrHr.hpi" class="gnbDp1">인재채용</a>
+		<button type="button" class="btnOpen">열기/닫기</button>
+		<div class="boxMenuSub subBox02">
+			<ul class="menu2dpt">
+				<li>
+					<a href="/cmg/kore/rcrt/pksr/RetrivePkSrHr.hpi" class="gnbDp2">인사제도</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/rcrt/pksr/RetrivePkSrCult.hpi" class="gnbDp2">즐거운직장</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/rcrt/pksr/RetrivePkSrApply.hpi" class="gnbDp2">지원하기</a>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<!-- 인재채용 -->
+	<!-- 사업소개 -->
+	<li>
+		<a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi" class="gnbDp1">사업소개</a>
+		<button type="button" class="btnOpen">열기/닫기</button>
+		<div class="boxMenuSub subBox03">
+			<ul class="menu2dpt">
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi" class="gnbDp2 hasDp3">모바일</a>
+					<button type="button" class="btnOpen">열기/닫기</button>
+					<ul class="menu3dpt">
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi" class="gnbDp3">5G</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLuMobile.hpi" class="gnbDp3">모바일</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLuRoam.hpi" class="gnbDp3">해외로밍</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuAI.hpi" class="gnbDp2 hasDp3">홈미디어</a>
+					<button type="button" class="btnOpen">열기/닫기</button>
+					<ul class="menu3dpt">
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLuAI.hpi" class="gnbDp3">AI</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLuIot.hpi" class="gnbDp3">IoT</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLuHome.hpi" class="gnbDp3">홈</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuBusi01.hpi" class="gnbDp2">기업</a>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<!-- 사업소개 -->
+	<!-- 투자정보 -->
+	<li>
+		<a href="/cmg/kore/invs/pkir/RetrievePkIrInvest.hpi" class="gnbDp1">투자정보</a>
+		<button type="button" class="btnOpen">열기/닫기</button>
+		<div class="boxMenuSub subBox04">
+			<ul class="menu2dpt">
+				<li>
+					<a href="/cmg/kore/invs/pkir/RetrievePkIrInvest.hpi" class="gnbDp2 hasDp3">경영정보</a>
+					<button type="button" class="btnOpen">열기/닫기</button>
+					<ul class="menu3dpt">
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrInvest.hpi" class="gnbDp3">투자현황</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrSholder.hpi" class="gnbDp3">대주주현황</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrStructure.hpi" class="gnbDp3">기업 지배구조</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/cmg/kore/invs/pkir/RetrievePkIrPublic.hpi" class="gnbDp2">공시정보</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/invs/pkir/RetrievePkIrStCurrent.hpi" class="gnbDp2 hasDp3">주가정보</a>
+					<button type="button" class="btnOpen">열기/닫기</button>
+					<ul class="menu3dpt">
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrStCurrent.hpi" class="gnbDp3">현재주가</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrStHourly.hpi" class="gnbDp3">시간별 호가</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrStDaliy.hpi" class="gnbDp3">일자별 주가</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrStChart.hpi" class="gnbDp3">차트분석</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrFholding.hpi" class="gnbDp3">외국인 지분율</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/cmg/kore/invs/pkir/RetrievePkIrIfs.hpi" class="gnbDp2 hasDp3">재무정보</a>
+					<button type="button" class="btnOpen">열기/닫기</button>
+					<ul class="menu3dpt">
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrIfs.hpi" class="gnbDp3">주요재무재표</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrBsheet.hpi" class="gnbDp3">재무상태표</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrIstate.hpi" class="gnbDp3">손익계산서</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrAreport.hpi" class="gnbDp3">감사보고서</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/cmg/kore/invs/pkir/RetrievePkIrNewsList.hpi" class="gnbDp2 hasDp3">IR자료실</a>
+					<button type="button" class="btnOpen">열기/닫기</button>
+					<ul class="menu3dpt">
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrNewsList.hpi" class="gnbDp3">IR소식</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrMonthList.hpi" class="gnbDp3">IR데이터</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrQuaterList.hpi" class="gnbDp3">실적자료</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/invs/pkir/RetrievePkIrPtList.hpi" class="gnbDp3">Presentation</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/cmg/kore/invs/pkir/RetrievePkIrNotice.hpi" class="gnbDp2">전자공고</a>
+				</li>
+			</ul>
+		</div>
+	</li>
+	<!-- 투자정보 -->
+	<!-- 기업정보 -->
+	<li>
+		<a href="/cmg/kore/info/pklu/RetrievePkLuIntroduce.hpi" class="gnbDp1">기업정보</a>
+		<button type="button" class="btnOpen">열기/닫기</button>
+		<div class="boxMenuSub subBox05">
+			<ul class="menu2dpt">
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuIntroduce.hpi" class="gnbDp2">기업소개</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuHistory07.hpi" class="gnbDp2">연혁</a>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/RetrievePkLuLgway.hpi" class="gnbDp2 hasDp3">경영철학</a>
+					<button type="button" class="btnOpen">열기/닫기</button>
+					<ul class="menu3dpt">
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLuLgway.hpi" class="gnbDp3">LG Way</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLuIdea.hpi" class="gnbDp3">경영이념</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/RetrievePkLuRmg.hpi" class="gnbDp3">정도경영</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/cmg/kore/info/pklu/ConManVision.hpi" class="gnbDp2 hasDp3">지속가능경영</a>
+					<button type="button" class="btnOpen">열기/닫기</button>
+					<ul class="menu3dpt">
+						<li>
+							<a href="/cmg/kore/info/pklu/ConManVision.hpi" class="gnbDp3">비전 및 전략</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/ConManValue01.hpi" class="gnbDp3">이해관계자 가치</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/ConManShare01.hpi" class="gnbDp3">사회적 나눔</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/ConManTech01.hpi" class="gnbDp3">환경경영</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/ConManReport.hpi" class="gnbDp3">지속가능경영 보고서</a>
+						</li>
+						<li>
+							<a href="/cmg/kore/info/pklu/CPProgram.hpi" class="gnbDp3">자율준수프로그램</a>
+						</li>
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</li>
+	<!-- 기업정보 -->
+</ul>
+<!--  <ul class="listBnrMenu hidden-xs">
+	<li><a href="#"><img src="http://image.uplus.co.kr/images/renewal/images/cm/pc/common/@temp_bannerMenu01.png" alt=""></a></li>
+	<li><a href="#"><img src="http://image.uplus.co.kr/images/renewal/images/cm/pc/common/@temp_bannerMenu02.png" alt=""></a></li>
+</ul>-->
+						
+					
+					 
+									
+					<nav class="listShortMo visible-xs">
+						<a href="/home/Index.hpi" class="btShort04">개인 <br>바로가기</a>
+						<a href="/biz/bzma/RetrieveMain.hpi" class="btShort05">기업/중소사업자 <br>바로가기</a>
+					</nav>
+					<nav class="listShortCut col4">
+						<a href="/css/note/cint/RetrieveCintNoticeList.hpi" class="btShort01">공지사항</a>
+						<a href="/com/cpif/lgin/lgns/RetrieveComNewsList.hpi" class="btShort02">보도자료</a>
+						<a href="/cmg/kore/info/pklu/RetrievePkLuLoc01.hpi" class="btShort03">오시는 길</a>
+						<a href="/cmg/kore/info/pklu/RetrievePkLuHomeMedia.hpi" class="btShort04">유플러스 체험관</a>
+					</nav>
+					
+					<!-- 2016-11-23 Mobile Only Footer in GNB -->
+					<footer id="footerGnb">
+						<div class="innerBox">
+
+							<div class="footerTop">
+								<a href="/cmg/kore/info/pklu/RetrievePkLuHomeMedia.hpi" class="btnHomeMedia">유플러스 체험관</a>
+								<a href="/cmg/kore/info/pklu/RetrievePkLuLoc01.hpi" class="btnRoadMap">오시는 길</a>
+								<ul class="listSns">
+									<li><a href="https://www.facebook.com/LGUplus" class="btnSns btS01" target="blank" title="새 창 열림"><span class="blind">LG U+ 페이스북 페이지</span></a></li>
+									<li><a href="http://www.youtube.com/user/LGupluslte" class="btnSns btS02" target="blank" title="새 창 열림"><span class="blind">LG U+ 유투브 채널</span></a></li>
+									<li><a href="/com/main/link/ExlinkInfo.hpi?WEB_BNNR_ID=main_twitter" class="btnSns btS03" target="blank" title="새 창 열림"><span class="blind">LG U+ 트위터</span></a></li>
+									<li><a href="http://blog.uplus.co.kr" class="btnSns btS04" target="blank" title="새 창 열림"><span class="blind">LG U+ 블로그</span></a></li>
+									<li><a href="https://www.instagram.com/lguplus_/" class="btnSns btS05" target="blank" title="새 창 열림"><span class="blind">LG U+ 인스타그램</span></a></li>
+									<li><a href="http://story.kakao.com/ch/lguplus_lg" class="btnSns btS06" target="blank" title="새 창 열림"><span class="blind">LG U+ 카카오스토리</span></a></li>
+								</ul>
+							</div>
+
+							<p class="copy">Copyright &copy;  <strong>LG Uplus Corp</strong>. All Rights Reserved.</p>
+						</div>
+					</footer>
+					<!--// 2016-11-23 Mobile Only Footer in GNB -->
+					
+					<button type="button" class="clsMenuAll hidden-xs">전체메뉴 닫기</button>
+				</div>
+				<button type="button" class="clsMenuAll visible-xs">전체메뉴 닫기</button>
+			</div>
+		</header>
+
+
+
+
+	<!--// header -->
+	<div id="container" class="contentCo">
+
+	<div class="mainWrap ">
+		<!--  -->
+		<section class="sectMain boxFld01">
+			<div class="innerBox">
+				<h2 class="titFld motion-item"><span class="titFldTxt"><span class="blind">고객 중심으로 생각하고 고객이 더 행복해지는 세상을 만들겠습니다</span></span></h2>
+				<article class="boxAnce anceMobile">
+					<p class="txtAnce"><a href="/css/note/cint/RetrieveCintNoticeListView.hpi?cntnsSrlno=917376">[공지] 2018년&nbsp;1분기&nbsp;실적발표&nbsp;컨퍼런스&nbsp;콜&nbsp;개최</a></p>
+					<a href="/css/note/cint/RetrieveCintNoticeList.hpi" class="btnMore">NEWS 공지사항 더보기</a>
+				</article>
+				<a href="#" class="btnCoFull"><span class="blind">펼치기</span></a>
+			</div>
+		</section>
+		<!--//  -->
+		<!--  -->
+		<section class="sectMain boxFld02">
+			<div class="innerBox">
+				<button type="button" class="btnIntro"><span class="btnIntroTxt">LG U+ 소개</span></button>
+				<h2 class="titFld motion-item"><span class="titFldTxt"><span class="blind">“고객에게 신뢰를 주고 사랑을 받는 회사, LG유플러스”</span></span></h2>
+				<a href="/cmg/kore/info/pklu/RetrievePkLuCeo.hpi?mid=10329" class="hidden-xs txtFld-link">
+					<p class="txtFld motion-item">‘해야 한다’는 책임감이 ‘할 수 있다’는 자신감을 불러일으켰듯, <br>이제 LG유플러스는 '하고 싶다'는 열망으로 더 큰 도약을 준비합니다.</p>
+					<p class="txtFld motion-item"><br>- LG유플러스 대표이사 부회장 권영수 -</p>
+				</a>
+				<ul class="listBtnMain hidden-xs">
+					<li class="icCk ico01 motion-item">
+						<a href="/cmg/kore/info/pklu/RetrievePkLuLove.hpi">따뜻한<br>이웃사랑</a>
+					</li>
+					<li class="icCk ico02 motion-item">
+						<a href="/cmg/kore/info/pklu/RetrievePkLuWith.hpi">고객과 함께</a>
+					</li>
+				</ul>
+				<a href="/cmg/kore/info/pklu/RetrievePkLuCeo.hpi" class="btnCoDirect">바로가기</a>
+			</div>
+		</section>
+		<!--//  -->
+		<!--  -->
+		<section class="sectMain boxFld03">
+			<div class="innerBox">
+				<button type="button" class="btnIntro"><span class="btnIntroTxt">인재채용</span></button>
+				<h2 class="titFld motion-item"><span class="titFldTxt"><span class="blind">아침에 눈을 뜨면 출근하고 싶은 회사, LG유플러스입니다</span></span></h2>
+				<ul class="listBtnMain hidden-xs">
+					<li class="icCk ico03 motion-item">
+						<a href="/cmg/kore/rcrt/pksr/RetrivePkSrCult.hpi">즐거운직장</a>
+					</li>
+					<li class="icCk ico04 motion-item">
+						<a href="/cmg/kore/rcrt/pksr/RetrivePkSrApply.hpi">입사지원하기</a>
+					</li>
+				</ul>
+				<a href="/cmg/kore/rcrt/pksr/RetrivePkSrHr.hpi" class="btnCoDirect">바로가기</a>
+				<img src="img/baby.png" alt="움직이는 사람" class="baby move-item">
+			</div>
+		</section>
+		<!--//  -->
+		<!--  -->
+		<section class="sectMain boxFld04">
+			<div class="innerBox">
+				<button type="button" class="btnIntro"><span class="btnIntroTxt">사업소개</span></button>
+				<h2 class="titFld motion-item"><span class="titFldTxt"><span class="blind">LG유플러스는 고객의 삶에 새로운 가치를 더하는 다양한 서비스를 제공하고 있습니다</span></span> </h2>
+				<ul class="listBtnMain hidden-xs">
+					<li class="icCk ico10 motion-item">
+						<a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi">모바일</a>
+					</li>
+					<li class="icCk ico11 motion-item">
+						<a href="/cmg/kore/info/pklu/RetrievePkLuAI.hpi">홈미디어</a>
+					</li>
+					<li class="icCk ico12 motion-item">
+						<a href="/cmg/kore/info/pklu/RetrievePkLuBusi01.hpi">기업</a>
+					</li>
+				</ul>
+				<!-- <ul class="listMaBiz hidden-xs">
+					<li>
+						<a href="#tabBiz07" class="active">5G</a>
+						<div id="tabBiz07">모든 국민이 누릴 수 있는 5G를 향해<br> 한 걸음 한 걸음 준비해 나갑니다
+						    <a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi" class="btnGoDirect">바로가기</a>
+						</div>
+					</li>
+					<li>
+						<a href="#tabBiz08">AI</a>
+						<div id="tabBiz08">앞서가는 AI서비스로 그동안 경험하지 못한 <br>새롭고 편리한 생활을 선사합니다
+							<a href="/cmg/kore/info/pklu/RetrievePkLuAI.hpi" class="btnGoDirect">바로가기</a>
+						</div>
+					</li>
+					<li>
+						<a href="#tabBiz01">모바일</a>
+						<div id="tabBiz01">언제 어디서나 편리한 모바일 생활을 <br>고객님께 제공합니다 
+						    <a href="/cmg/kore/info/pklu/RetrievePkLuMobile.hpi" class="btnGoDirect">바로가기</a>
+						</div>
+					</li>
+					<li>
+						<a href="#tabBiz02">홈</a>
+						<div id="tabBiz02">편리하고 다양한 생활편의 콘텐츠가 <br>온 가족에게 스마트한 삶을 선물합니다
+							<a href="/cmg/kore/info/pklu/RetrievePkLuHome.hpi" class="btnGoDirect">바로가기</a>
+						</div>
+					</li>
+					<li>
+						<a href="#tabBiz04">IoT</a>
+						<div id="tabBiz04">사물과 사람을 인터넷으로 연결하는<br>IoT 기술로 미래를 앞서갑니다
+							<a href="/cmg/kore/info/pklu/RetrievePkLuIot.hpi" class="btnGoDirect">바로가기</a>
+						</div>
+					</li>
+					<li>
+						<a href="#tabBiz05">로밍</a>
+						<div id="tabBiz05">전세계 어디서나 편리하고 스마트한 <br>로밍서비스를 제공합니다
+							<a href="/cmg/kore/info/pklu/RetrievePkLuRoam.hpi" class="btnGoDirect">바로가기</a>
+						</div>
+					</li>
+					<li>
+						<a href="#tabBiz06">기업</a>
+						<div id="tabBiz06">고객사의 성공을 위해 최고의 솔루션을 제공하는 <br>고객의 업무 파트너입니다 
+							<a href="/cmg/kore/info/pklu/RetrievePkLuBusi01.hpi" class="btnGoDirect">바로가기</a>
+						</div>
+					</li>
+				</ul> -->
+				<a href="/cmg/kore/info/pklu/RetrievePkLu5G.hpi" class="btnCoDirect">바로가기</a>
+			</div>
+		</section>
+		<!--//  -->
+		<!--  -->
+		<section class="sectMain boxFld05">
+			<div class="innerBox">
+				<button type="button" class="btnIntro"><span class="btnIntroTxt">투자정보</span></button>
+				<h2 class="titFld motion-item"><span class="titFldTxt"><span class="blind">LG유플러스는 고객과 구성원의 행복을 추구하며 동시에 주주가치를 극대화합니다</span></span></h2>
+				<ul class="listBtnMain hidden-xs">
+					<li class="icCk ico05 motion-item">
+						<a href="/cmg/kore/invs/pkir/RetrievePkIrIfs.hpi">주요<br>재무제표</a>
+					</li>
+					<li class="icCk ico06 motion-item">
+						<a href="/cmg/kore/invs/pkir/RetrievePkIrNewsList.hpi">IR<br>자료실</a>
+					</li>
+				</ul>
+				<ul class="listStock hidden-xs">
+					<li>
+						<dl>
+							<dt>LG U<sup>+</sup></dt>
+							<dd class="stCur">76,700</dd>
+							<dd class="stChg chgUp">
+								<strong>1,500</strong>
+								<span>1.99%</span>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl>
+							<dt>Kospi</dt>
+							<dd class="stCur">1951.02</dd>
+							<dd class="stChg chgDn">
+								<strong>106</strong>
+								<span>-1.8%</span>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<a href="/cmg/kore/invs/pkir/RetrievePkIrInvest.hpi" class="btnCoDirect">바로가기</a>
+				<div class="lightstem  move-item"><img src="img/light.png" alt="빛"></div>
+			</div>
+		</section>
+		<!--//  -->
+		<!--  -->
+		<section class="sectMain boxFld06">
+			<div class="innerBox">
+				<button type="button" class="btnIntro"><span class="btnIntroTxt">기업정보</span></button>
+				<h2 class="titFld motion-item"><span class="titFldTxt"><span class="blind">LG유플러스는 지속적인 성장과 함께 고객에게 가치있는 서비스를 제공하고 사회적 책임을 다하기 위해 노력합니다</span></span></h2>
+				<ul class="listBtnMain hidden-xs">
+					<li class="icCk ico07 motion-item">
+						<a href="http://www.uplus.co.kr/sys/comm/CommSpecDown.hpi?fileName=LG_UPLUS_SustainabilityReport2016_KR.pdf&realName=LG_UPLUS_SustainabilityReport2016_KR.pdf&spec=board_files">지속가능경영보고서<br>국문 다운로드</a>
+						<a href="http://www.uplus.co.kr/sys/comm/CommSpecDown.hpi?fileName=LG_UPLUS_SustainabilityReport2016_EN.pdf&realName=LG_UPLUS_SustainabilityReport2016_EN.pdf&spec=board_files">지속가능경영보고서<br>영문 다운로드</a>
+					</li>
+					<li class="icCk ico08 motion-item">
+						<a href="/cmg/kore/info/pklu/ConManShare01.hpi">사회적 나눔</a>
+					</li>
+					<li class="icCk ico09 motion-item">
+						<a href="/cmg/kore/info/pklu/ConManTech01.hpi">환경경영</a>
+					</li>
+				</ul>
+				<a href="/cmg/kore/info/pklu/RetrievePkLuIntroduce.hpi" class="btnCoDirect">바로가기</a>
+				<div class="lighter">
+					<img src="img/lt1.png" alt="빛1">
+					<img src="img/lt2.png" alt="빛2">
+					<img src="img/lt3.png" alt="빛3">
+					<img src="img/lt4.png" alt="빛4">
+					<img src="img/lt5.png" alt="빛5">
+					<img src="img/lt6.png" alt="빛6">
+					<img src="img/lt7.png" alt="빛7">
+					<img src="img/lt8.png" alt="빛8">
+					<img src="img/lt9.png" alt="빛9">
+					<img src="img/lt10.png" alt="빛10">
+					<img src="img/lt11.png" alt="빛11">
+					<img src="img/lt12.png" alt="빛12">
+					<img src="img/lt13.png" alt="빛13">
+				</div>
+			</div>
+		</section>
+		<!--//  -->
+		<!--  -->
+		<section class="sectMain boxFld07 hidden-xs">
+			<div class="innerBox">
+				<article class="boxStory storyNews motion-item">
+					<h3 class="stitStory">보도자료</h3>
+					<a href="/com/cpif/lgin/lgns/RetrieveComNewsListView.hpi?cntnsSrlno=925277" class="cellStory">
+						<span class="thumb_img"><img src="http://www.uplus.co.kr/imgdown?policyName=board_files&amp;fileName=20180604150849405.jpg&amp;realName=20180604150849405.jpg" alt="LG유플러스-네이버, 따뜻한 AI기술로 장애가정 지원한다||"class="thumb"/></span>					
+						<dl>
+							<dt class="txt_cut">LG유플러스-네이버, 따뜻한 AI기술로 장애가정 지원</dt>
+							<dd class="txt_cut">시각장애 가정 500가구에 U+우리집AI 스피커 기증 전달식 갖고</dd>
+						</dl>
+					</a>
+					<a href="/com/cpif/lgin/lgns/RetrieveComNewsList.hpi" class="btnMore">보도자료 더보기</a>
+				</article>
+				<article class="boxStory storyAd motion-item">
+					<h3 class="stitStory">광고 속 이야기</h3>
+					
+						
+							<a href="#layMov" class="cellStory btnPlay" data-mov="ZK1555cJwZM">
+								<span class="thumb_img"><img src="http://image.uplus.co.kr/images/tvad/20180504a184611959.jpg" alt="[ 넷플릭스 3개월 무제한 이용 ] 범인은 바로 너는 데이터 걱정 없이 보자! " class="thumb"></span>
+								<dl>
+									<dt class="titMov">[ 넷플릭스 3개월 무제한 이용 ] 범인은 바로 너는 데이터 걱정 없이 보자! </dt>
+									<dd class="descMov">속도 용량 걱정 없는 데이터요금제로 마음껏 시청하세요</dd>
+								</dl>
+							</a>
+						
+							<a href="#layMov" class="cellStory btnPlay" data-mov="OOP3NiRrBHQ">
+								<span class="thumb_img"><img src="http://image.uplus.co.kr/images/tvad/20180504a184435922.jpg" alt="[U+프로야구] '보이나요? 당신의 열정을 향한 세상의 응원이'" class="thumb"></span>
+								<dl>
+									<dt class="titMov">[U+프로야구] '보이나요? 당신의 열정을 향한 세상의 응원이'</dt>
+									<dd class="descMov">농아인 야구선수 윤희씨와 동료들을 응원해주세요.</dd>
+								</dl>
+							</a>
+						
+					
+					<!-- 
+					<a href="#layMov" class="cellStory btnPlay" data-mov="OOP3NiRrBHQ">
+						<figure>
+							<img src="http://image.uplus.co.kr/images/tvad/20180504a184435922.jpg" alt="[U+프로야구] '보이나요? 당신의 열정을 향한 세상의 응원이'" class="thumb">
+							<figcaption>
+								<dl>
+									<dt class="titMov">[U+프로야구] '보이나요? 당신의 열정을 향한 세상의 응원이'</dt>
+									<dd class="descMov">농아인 야구선수 윤희씨와 동료들을 응원해주세요.</dd>
+								</dl>
+							</figcaption>
+						</figure>
+					</a>
+					 -->
+					<a href="/cmg/kore/info/pklu/RetrievePkLuAdStory.hpi" class="btnMore">광고 속 이야기 더보기</a>
+				</article>
+			</div>
+		</section>
+		<!--//  -->
+		<article class="boxAnce hidden-xs">
+			<div class="innerBox">
+				<h3 class="stitAnce">새로운 소식</h3>
+				<p class="txtAnce"><a href="/css/note/cint/RetrieveCintNoticeListView.hpi?cntnsSrlno=917376">[공지] 2018년&nbsp;1분기&nbsp;실적발표&nbsp;컨퍼런스&nbsp;콜&nbsp;개최</a></p>
+				<a href="/css/note/cint/RetrieveCintNoticeList.hpi" class="btnMore">새로운 소식 더보기</a>
+			</div>
+		</article>
+	</div>
+
+	<!-- Movie Layer -->
+	<div class="layPopCk layMov" id="layMov" style="display:none;">
+		<figure class="boxMov">
+			<iframe width="975" height="570" src="" frameborder="0" allowfullscreen class="dataMov" title="유투브 영상"></iframe>
+			<!-- <figcaption class="movCaption">
+				<h3 class="titMovCap">[LG U+] 유플러스 고객만의 특별한 해외 로밍 BIG 3 혜택!</h3>
+				<label for="txtCap" class="blind">영상 자막</label>
+				<textarea name="txtCap" id="txtCap" cols="30" rows="4" class="txtMovCap" readonly="">자막이 들어가는 영역입니다. 장차법 관련하여 모든 영상에는 자막이 제공되어야 하므로 자막텍스트 삽입해주세요.  자막이 들어가는 영역입니다. 장차법 관련하여 모든 영상에는 자막이 제공되어야 하므로 자막텍스트 삽입해주세요.  자막이 들어가는 영역입니다. 장차법 관련하여 모든 영상에는 자막이 제공되어야 하므로 자막텍스트 삽입해주세요.  자막이 들어가는 영역입니다. 장차법 관련하여 모든 영상에는 자막이 제공되어야 하므로 자막텍스트 삽입해주세요.  자막이 들어가는 영역입니다. 장차법 관련하여 모든 영상에는 자막이 제공되어야 하므로 자막텍스트 삽입해주세요.  자막이 들어가는 영역입니다</textarea>
+			</figcaption> -->
+		</figure>
+		<button class="btn btnCK close"></button>
+	</div>
+	<!--// Movie Layer -->
+
+		</div>
+		<!--// content -->
+		<!-- footer -->
+		<footer id="footer">
+			<div class="innerBox">
+
+				<div class="footerTop">
+					<a href="/cmg/kore/info/pklu/RetrievePkLuLoc01.hpi" class="btnRoadMap"><span class="blind">오시는 길</span></a>
+					<div class="boxFamFoot btnHomeMedia">
+						<button type="button" class="btnFamFoot"><span class="blind">유플러스 체험관</span></button>
+						<ul class="listFamFoot"> 
+							<li><a href="/cmg/kore/info/pklu/RetrievePkLuHomeMedia.hpi">체험관 소개</a></li>
+							<li><a href="/cmg/kore/info/pklu/RetrievePkLuHomeMediaLoc.hpi">체험관 이용 안내</a></li>
+							<li><a href="/cmg/kore/info/pklu/RetrievePkLuHomeMediaVisit.hpi">방문 예약</a></li>
+							<li><a href="/cmg/kore/info/pklu/RetrievePkLuHomeMediaConf.hpi">예약 확인 및 취소</a></li>
+							<li><a href="/cmg/kore/info/pklu/RetrievePkLuHomeMediaFaq.hpi">자주하는 질문</a></li>
+						</ul>
+					</div>
+					
+					<ul class="listSns">
+						<li><a href="https://www.facebook.com/LGUplus" class="btnSns btS01" target="blank" title="새창열림">LG U<sup>+</sup> 페이스북 페이지</a></li>
+						<li><a href="http://www.youtube.com/user/LGupluslte" class="btnSns btS02" target="blank" title="새창열림">LG U<sup>+</sup> 유투브 채널</a></li>
+						<li><a href="http://twitter.com/LGUplus" class="btnSns btS03" target="blank" title="새창열림">LG U<sup>+</sup> 트위터</a></li>
+						<li><a href="http://blog.uplus.co.kr" class="btnSns btS04" target="blank" title="새창열림">LG U<sup>+</sup> 블로그</a></li>
+						<li><a href="https://www.instagram.com/lguplus_/" class="btnSns btS05" target="blank" title="새창열림">LG U<sup>+</sup> 인스타그램</a></li>
+						<li><a href="http://story.kakao.com/ch/lguplus_lg" class="btnSns btS06" target="blank" title="새창열림">LG U<sup>+</sup> 카카오스토리</a></li>
+					</ul>
+					<div class="boxFamFoot">
+						<button type="button" class="btnFamFoot">바로가기</button>
+						<ul class="listFamFoot"> 
+							<li><a href="http://www.lguplus.co.kr/">LG U<sup>+</sup>홈페이지</a></li>
+							<li><a href="http://www.lg.co.kr/about/affiliatesList.dev" title="새창열림" target="blank">LG계열사</a></li>
+							<li><a href="https://suppliers.lguplus.co.kr/" title="새창열림" target="blank">구매협업</a></li>
+							<li><a href="http://ethics.lg.co.kr/ethics/ko/jebo/collaboration/TwinsProject.jsp" title="새창열림" target="blank">협력회사상생고</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="footerInfo">
+					<ul>
+						<li>㈜엘지유플러스 대표이사 권영수</li>
+						<li><address>서울특별시 용산구 한강대로 32</address></li>
+						<li>사업자등록번호 220-81-39938</li>
+						<li>통신판매신고 제 2015-서울용산-00481호</li>
+						<li><a href="http://www.ftc.go.kr/info/bizinfo/communicationView.jsp?apv_perm_no=2015302015030200474&area1=&area2=&currpage=1&searchKey=01&searchVal=(주)엘지유플러스&stdate=&enddate=" target="blank" title="새창열림" >사업자정보확인</a></li>
+						<li class="clLeft">고객센터 : [휴대폰] 휴대폰에서 114 (무료), 1544-0010 (유료)</li>
+						<li>[인터넷/TV/전화] 국번없이 101</li>
+						<li>[쇼핑] 1644-7009(유료)</li>
+						<li>[기업] 고객센터 1544-0001 (유료)</li>
+					</ul>
+				</div>
+
+				<div class="listAuthFoot">
+					
+					<figure>
+						<img src="http://image.uplus.co.kr/images/renewal/images/co/common/img_waMark.png" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" title="국가 공인 인증기관 : 웹와치" />
+						<figcaption>
+						<a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" target="blank" title="새창열림">
+							<span class="hidden-xs">과학기술정보통신부 웹접근성 준수</span>
+							<span class="visible-xs">과학기술정보통신부<br>웹접근성 준수</span>
+						</a>
+						</figcaption>
+					</figure>
+					
+					<figure>
+						<img src="http://image.uplus.co.kr/images/renewal/images/co/common/img_auth02.png" alt="가족친화인증 마크">
+						<figcaption>
+						<a href="http://ffm.mogef.go.kr/main/main.do" target="blank" title="새창열림">
+						가족친화인증
+						</a>
+						</figcaption>
+					</figure>
+					<figure>
+						<img src="http://image.uplus.co.kr/images/renewal/images/co/common/img_auth03.png" alt="정도경영 사이버신문고 마크">
+						<figcaption><a href="http://ethics.lg.co.kr/index.do" target="blank" title="새창열림">정도경영 <br class="visible-xs">사이버신문고</a></figcaption>
+					</figure>
+				</div>
+
+				<p class="copy">Copyright &copy;  <strong>LG Uplus Corp</strong>. All Rights Reserved.</p>
+			</div>
+		</footer>
+		<!--// footer -->
+	</div>
+	<div id="maskCK"></div>
+	
+<!--
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74682916-1', 'auto', 'uplus');
+  ga('uplus.send', 'pageview');  
+</script>
+-->
+
+<!-- 새로운 추적코드 20161230 -->
+<!--
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89552238-1', 'auto', 'uplusnew');
+  ga('uplusnew.send', 'pageview');
+</script>
+-->
+
+<!-- AceCounter Log Gathering Script V.7.5.2017020801 : 프로모션 트레킹 20170817 -->
+<!--
+<script language='javascript'>
+	var _AceGID=(function(){var Inf=['gtc10.acecounter.com','8080','AS2A40481265909','AW','0','NaPm,Ncisy','ALL','0']; var _CI=(!_AceGID)?[]:_AceGID.val;var _N=0;var _T=new Image(0,0);if(_CI.join('.').indexOf(Inf[3])<0){ _T.src =( location.protocol=="https:"?"https://"+Inf[0]:"http://"+Inf[0]+":"+Inf[1]) +'/?cookie'; _CI.push(Inf);  _N=_CI.length; } return {o: _N,val:_CI}; })();
+	var _AceCounter=(function(){var G=_AceGID;var _sc=document.createElement('script');var _sm=document.getElementsByTagName('script')[0];if(G.o!=0){var _A=G.val[G.o-1];var _G=(_A[0]).substr(0,_A[0].indexOf('.'));var _C=(_A[7]!='0')?(_A[2]):_A[3];var _U=(_A[5]).replace(/\,/g,'_');_sc.src=(location.protocol.indexOf('http')==0?location.protocol:'http:')+'//cr.acecounter.com/Web/AceCounter_'+_C+'.js?gc='+_A[2]+'&py='+_A[4]+'&gd='+_G+'&gp='+_A[1]+'&up='+_U+'&rd='+(new Date().getTime());_sm.parentNode.insertBefore(_sc,_sm);return _sc.src;}})();
+</script>
+<noscript><img src='http://gtc10.acecounter.com:8080/?uid=AS2A40481265909&je=n&' border='0' width='0' height='0' alt=''></noscript> 
+-->
+<!-- AceCounter Log Gathering Script End -->
+
+
+<!-- ///////////////////// -->
+<!-- 스크립트 스크롤 모션 처리 -->
+<!-- ///////////////////// -->		
+<style type="text/css">
+	.sectMain .innerBox {position:relative;}
+	.motion-item {position:relative; opacity:0;}
+	.sectMain.boxFld03 {background-image:url(img/bg_mainKey03.jpg);}
+	.sectMain.boxFld05 {background-image:url(img/bg_mainKey05.jpg);}
+	.sectMain.boxFld05 .titFld {z-index:2;}
+	.sectMain.boxFld06 {background-image:url(img/bg_mainKey06.jpg);}
+	.sectMain .baby {position:absolute; top:40px; right:0; opacity:0;}
+	.lightstem {position:absolute; top:0; right:255px; width:221px; height:255px; background:url(img/light_stem.png) no-repeat 0 0; opacity:0;}
+	.lightstem img {position:absolute; width:164px; height:70px; top:100%; left:50%; margin-left:-82px; opacity:0;}
+	.lighter img {position:absolute; opacity:0;}
+	.lighter img:nth-child(1) {left:640px; top:445px;}
+	.lighter img:nth-child(2) {display:none;}
+	.lighter img:nth-child(3) {top:570px; right:-70px;}
+	.lighter img:nth-child(4) {top:0; right:620px;}
+	.lighter img:nth-child(5) {top:50px; right:550px;}
+	.lighter img:nth-child(6) {top:0; right:550px;}
+	.lighter img:nth-child(7) {top:0; right:0;}
+	.lighter img:nth-child(8) {top:150px; right:-30px;}
+	.lighter img:nth-child(9) {right:120px;}
+	.lighter img:nth-child(10) {top:450px; right:140px;}
+	.lighter img:nth-child(11) {top:480px; right:140px;}
+	.lighter img:nth-child(12) {top:510px; right:140px;}
+	.lighter img:nth-child(13) {top:530px; right:140px;}
+</style>
+
+<script type="text/javascript">
+$(function(){
+	var sectMainTop = [];
+	var sectMainBoxArr = [".sectMain.boxFld01",".sectMain.boxFld02",".sectMain.boxFld03",".sectMain.boxFld04",".sectMain.boxFld05",".sectMain.boxFld06",".sectMain.boxFld07"];
+	//sectMainBoxArr[7] = $(document).height() - $(window).height();
+	var es_step = "Expo.ease";
+	var easing = "Power4.ease";
+	var isVisible = [false, false, false, false, false, false, false]; //0제외 1 ~ 6
+	var isMotion = [false, false, false, false, false, false, false]; //0제외 1 ~ 6
+
+	/* kind of ease
+		"power1" 	: "Power1.ease",
+		"power2" 	: "Power2.ease",
+		"power3"	: "Power3.ease",
+		"power4" 	: "Power4.ease",
+		"back"		: "Back.ease",
+		"elastic" : "Elastic.ease",
+		"bounce"	: "Bounce.ease",
+		"slowmo"	: "SlowMo.ease",
+		"circ"		: "Circ.ease",
+		"expo"		: "Expo.ease",
+		"sine"		: "Sine.ease"	
+		*스크롤바 문서 최하단 위치값 scrolltop == $(document).height() - $(window).height()
+	*/
+
+	$(".sectMain").each(function(){
+		sectMainTop.push( $(this).offset().top - 100 );
+	})
+	console.log(sectMainTop);
+	
+	//리소스 다 받으면 실행
+	$(window).on("load", function(){
+		//처음 로드될때 한번 실행
+		setTimeout(function(){
+			$("html, body").animate({ scrollTop:0 },100);
+			TweenMax.fromTo( $(sectMainBoxArr[0]).find(".motion-item") , .5, {top:sectMainTop[1] , ease: es_step }, {top:145, opacity:1, ease: es_step } );
+		},500);
+
+		setTimeout(function(){
+			//스크롤할때 (각 섹션의 top값을 지나갈때 순차적으로 모션)
+			$(window).scroll(function(){
+				var scrolltop = $(document).scrollTop();
+				//console.log(scrolltop);
+
+				if( scrolltop > sectMainTop[1] && !isVisible[1] ){
+					//$(sectMainBoxArr[1]).find(".motion-item") 모션시작
+					scrollEvent(sectMainBoxArr, 1, "Expo.ease", isVisible);
+					
+				}else if( scrolltop > sectMainTop[2] && !isVisible[2] ){ //baby
+					//$(sectMainBoxArr[2]).find(".motion-item") 모션시작
+					scrollEvent(sectMainBoxArr, 2, "Expo.ease", isVisible);
+				
+				}else if( scrolltop > sectMainTop[3] && !isVisible[3] ){
+					//$(sectMainBoxArr[3]).find(".motion-item") 모션시작
+					scrollEvent(sectMainBoxArr, 3, "Expo.ease", isVisible);
+					
+
+				}else if( scrolltop > sectMainTop[4] && !isVisible[4] ){ //light
+					//$(sectMainBoxArr[4]).find(".motion-item") 모션시작
+					scrollEvent(sectMainBoxArr, 4, "Expo.ease", isVisible);
+					
+
+				}else if( scrolltop > sectMainTop[5] && !isVisible[5] ){ //lighter
+					//$(sectMainBoxArr[5]).find(".motion-item") 모션시작
+					scrollEvent(sectMainBoxArr, 5, "Expo.ease", isVisible);
+					
+
+				}else if( scrolltop > sectMainTop[6] && !isVisible[6] ){
+					//$(sectMainBoxArr[6]).find(".motion-item") 모션시작
+					scrollEvent(sectMainBoxArr, 6, "Expo.ease", isVisible);
+					
+				}
+				
+				//top button
+				if( scrolltop > sectMainTop[1] ){
+					 TweenMax.to($("#topBtn"),0.8,{ opacity:1 } );
+				}else{
+					 TweenMax.to($("#topBtn"),0.8,{ opacity:0 } );
+				}
+				
+			})
+		},1000)
+	
+		//top button
+		$("<a href='#wrap' id='topBtn'>TOP</a>").css({
+			"position":"fixed",
+			"right":"50px",
+			"bottom":"0",
+			"zIndex":"5",
+			"backgroundColor":"crimson",
+			"color":"#fff",
+			"fontSize":"20px",
+			"width":"50px",
+			"height":"50px",
+			"lineHeight":"50px",
+			"textAlign":"center",
+			"borderRadius":"100%",
+			"opacity":"0"
+		}).appendTo("#footer").on("click", function(e){
+			e.preventDefault();
+			$("html, body").animate({ scrollTop:0 }, 500, function(){
+				TweenMax.to($("#topBtn"),0.8,{ opacity:0 } );
+			});
+		});
+	})
+	
+});
+	
+//함수정의
+function scrollEvent(arr, num, easing, flag){
+	$(arr[num]).find(".motion-item").each(function(i,el){
+		TweenMax.set($(this), { y : (150) });
+		TweenMax.to($(this),0.8,{delay:i*0.3, y:0, opacity:1, ease:easing, onCompleteParams:[num], onComplete:afterFunc } );
+	});
+	function afterFunc(num){
+		switch(num){
+			case 2:
+			console.log("we have baby!");
+			TweenMax.set($(".baby"), { x : (-80) });
+			TweenMax.to($(".baby"),0.5,{delay:1, x:0, opacity:1, ease:easing } );
+			break;
+
+			case 4:
+			console.log("we have light stem!");
+			TweenMax.set($(".lightstem"), { y : (-60) });
+			TweenMax.to($(".lightstem"),0.8,{delay:0.5, y:0, opacity:1, ease:easing, onComplete:afterLight } );
+			function afterLight(){
+				TweenMax.to($(".lightstem").find("img"),0.5,{delay:0.5, opacity:1, ease:easing } );
+			}
+			break;
+
+			case 5:
+			console.log("we have many shapes of lighter!");
+			$(".lighter").find("img").each(function(i,el){
+				if( i == 0){
+					TweenMax.staggerTo($(this), 0.5, {delay:1.2, opacity:1}, 0.8 );
+				}else{
+					TweenMax.staggerTo($(this), i*0.5, {delay:i*0.4, opacity:1}, 0.8 );
+				}
+			});
+			break;
+		}
+	}
+
+	flag[num] = true;	
+}
+function babyEvent(){
+	
+}
+</script>
+<!-- ///////////////////// -->
+<!-- 스크립트 스크롤 모션 처리 -->
+<!-- ///////////////////// -->
+</body>
+</html>

@@ -1,0 +1,6 @@
+ul {
+	&:after {display:block;content:"";clear:both;}
+	li {float:left;
+		& a {color:#888;}
+	}
+}

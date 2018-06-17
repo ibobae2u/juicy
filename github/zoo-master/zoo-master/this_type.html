@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>type of this</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+<button id="btn">버튼</button>
+		
+<!-- 일반함수에서의 this -->	
+<script>
+var data = 10;
+function outer(){
+	this.data = 20;
+	data = 30;
+	console.log(this.data +"/"+data+"/"+window.data); //30 30 30
+}
+outer();
+</script>
+
+<!-- 중첩함수에서의 this -->
+<script>
+var data = 30;
+function outer(){
+	function inner(){
+		this.data = 40;
+		data = 50;
+		console.log(this.data +"/"+data+"/"+window.data); //50 50 50
+	}
+	inner();
+}
+outer();
+</script>
+<!-- ///////////////// -->
+
+<!-- 이벤트에서의 this -->
+<script>
+var data = 70;
+$(function(){
+  $("#btn").click(function(){
+	 this.data = 80;
+	 data = 90;
+	 console.log(this.data +"/"+data+"/"+window.data); //80 90 90
+  });
+})
+</script>
+<!-- ///////////////// -->
+
+<!-- 메서드에서의 this -->
+<script>
+var data = 100;
+function Method(){
+  this.data = 101;
+}
+Method.prototype.method = function(){
+  this.data = 102;
+  data = 103;
+  console.log(this.data +"/"+data+"/"+window.data); //102 103 103 
+}
+var oop = new Method();
+oop.method();
+</script>
+<!-- ///////////////// -->
+
+<!-- 메서드 내부의 중첩함수에서의 this -->
+<script>
+var data = 200;
+function Method2(){
+  this.data = 201;
+}
+Method2.prototype.method2 = function(){
+  function method2(){
+  	this.data = 202;
+  	data = 203;
+  	console.log(this.data +"/"+data+"/"+window.data); //203 203 203 
+  }
+  method2();
+}
+var oop = new Method2();
+oop.method2();
+</script>
+<!-- ///////////////// -->
+
+</body>
+</html>
